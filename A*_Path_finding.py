@@ -160,10 +160,10 @@ maze2 =[[0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 1, 0, 0, 0, 0, 0]]
 
 maze2 =[[0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 1, 0, 1, 0, 0, 0, 0, 0],
+        [0, 0, 1, 0, 1, 0, 0, 0, 0, 0],
+        [0, 0, 1, 0, 1, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
@@ -188,11 +188,11 @@ RED = (255, 0, 0)
 BLUE = (0, 0, 255)
 
 
-grid_object = Grid(10, 10)
-grid_object.fill_grid(maze)
-
 start_position = (0, 0)
-end_position = (6, 7)
+
+grid_object = Grid(10, 10, start_pos=start_position)
+grid_object.fill_grid(maze2)
+
 
 running = True
 while running:
@@ -214,7 +214,7 @@ while running:
     
     end_position = (mouse_x // GRID_SIZE, mouse_y // GRID_SIZE)
 
-    path = A_star(grid_object, start_position, end_position)
+    path = A_star(grid_object, end_position)
     
     screen.fill(WHITE)
     
