@@ -178,7 +178,7 @@ pygame.init()
 WIDTH, HEIGHT = 500, 500
 GRID_SIZE = 50
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("A* Pathfinding")
+pygame.display.set_caption("A* Cursor Chaser")
 clock = pygame.time.Clock()
 
 WHITE = (255, 255, 255)
